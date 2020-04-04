@@ -1,0 +1,26 @@
+Type Inference for method variables.
+
+G1GC performance imporvements.
+	G1GC divides heap into small cells can be eden space (for new objects), suvivour space(for slightly longer lived objects) or old space (very long lived object)
+	It can do incremental GC. Selects subset of the heap to GC which results in lower GC pauses.
+	It can also do parallel marking.
+	It is well suited for large heaps.
+	We can predefine pause time goal.
+	Slightly more memory intensive.
+	Full GC has been changed to run in parallel mode.
+	
+Improved container awareness.
+	JVM is now aware of the container and will query the container for available CPU's and memory.
+
+
+
+Deprecations:
+	java.security.acl instead use java.security
+	java.security.{Certificate, Identity, IdentityScope, Singer}
+	javax.security.auth.Policy --> use java.security.Policy
+
+Removals:
+	Removed command line tool javah --> use javac -h <dir> instead
+	Removed policy tool
+	Removed -X:prof --> use jmap instead or any other 3rd party profilers
+	
